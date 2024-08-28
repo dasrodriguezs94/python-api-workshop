@@ -12,7 +12,7 @@ list_api = ListAPI()
 def test_create_list():
     """Test creating a new list."""
     response = list_api.create_list("My Favorite Movies", "A list of my all-time favorite movies.")
-    assert response.status_code == 200, f"Expected status code 201, got {response.status_code}"
+    assert response.status_code == 201, f"Expected status code 201, got {response.status_code}"
 
     # Deserialize response and validate schema
     create_list_response = CreateListResponse(**response.json())
