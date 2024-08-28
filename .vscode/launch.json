@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Debug Pytest",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/.venv/bin/pytest",  // For virtual environments on Linux/Mac
+            // "program": "${workspaceFolder}/.venv/Scripts/pytest.exe", // For virtual environments on Windows
+            // "program": "${workspaceFolder}/env/bin/pytest",  // Modify if your virtual environment is named differently
+            "args": [
+                "-v",
+                "${relativeFile}"  // This will run the tests in the currently open file
+                // "--maxfail=1",    // Optional: stop after one failure
+                // "--disable-warnings"  // Optional: disable warnings
+            ],
+            "justMyCode": true,
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/src"  // Modify this to your source code path if needed
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": false
+        }
+    ]
+}
